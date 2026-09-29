@@ -1,0 +1,14 @@
+@host = http://localhost:5090
+
+### Login as clerk
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "userName": "clerk",
+  "password": "clerk"
+}
+
+### List products (set token from login)
+GET {{host}}/api/products
+Authorization: Bearer {{token}}
